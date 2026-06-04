@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- Following code has been commented with appropriate comments for your reference. -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./Sign_Up.css"> <!-- Linking external CSS file -->
-</head>
-<body>
-    <div class="container" style="margin-top: 5%;"> 
+import React from 'react';
+import './Sign_Up.css';
+
+export function SignUp() {
+    
+
+    return (
+        <>
+            <div class="container" style="margin-top: 5%;"> 
         <div class="signup-grid"> 
             <div class="signup-text"> 
                 <h1>Sign Up</h1>
@@ -47,5 +45,8 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+        </>
+    )
+}
+
+export default SignUp;

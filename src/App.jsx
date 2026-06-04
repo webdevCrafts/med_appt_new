@@ -2,13 +2,19 @@
 import React from 'react';
 
 // Import components for routing from react-router-dom library
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Import custom LandingPage component
 import LandingPage from './Components/Landing_Page/Landing_Page';
 
 // Import custom Navbar component
 import Navbar from './Components/Navbar/Navbar';
+
+// Import custom SignUp component
+import SignUp from './Components/Sign_Up/Sign_Up';
+
+// Import custom Login component
+import Login from './Components/Login/Login';
 
 // Function component for the main App
 function App() {
@@ -18,6 +24,7 @@ function App() {
     <div className="App">
         {/* Set up BrowserRouter for routing */}
         <BrowserRouter>
+
           {/* Display the Navbar component */}
           <Navbar/>
 
@@ -26,6 +33,11 @@ function App() {
             {/* Define individual Route components for different pages */}
 
                 <Route path="/" element={<LandingPage/>}/>
+
+                <Route path="/Sign_Up" element={<SignUp/>}/>
+
+                <Route path="/Login" element={<Login/>}/>
+
           </Routes>
         </BrowserRouter>
     </div>

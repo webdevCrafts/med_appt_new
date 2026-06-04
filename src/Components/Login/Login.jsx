@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<!-- The following code is a simple HTML document for a login page. -->
-<!-- Following code has been commented with appropriate comments for your reference. -->
-<html lang="en">
-<head>
-    <!-- Meta tags for character set and viewport settings -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Link to external stylesheet Login.css -->
-    <link rel="stylesheet" href="./Login.css">
-</head>
-<body>
-    <!-- Main container div for the page content -->
-    <div class="container">
+import React from 'react';
+import './Login.css';
+
+export function Login() {
+    
+
+    return (
+        <>
+            <div class="container">
        
         <div class="login-grid">
           
@@ -60,6 +54,8 @@
           </div>
         </div>
       </div>
-</body>
-</html>
-	
+        </>
+    )
+}
+
+export default Login;
