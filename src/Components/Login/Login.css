@@ -1,3 +1,14 @@
+div.login-grid { 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+}
+
+.login-text {
+    width: fit-content;
+}
+
 /* Styles for the main container */
 .container {
     max-width: 900px; /* Maximum width of the container */

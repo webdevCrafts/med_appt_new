@@ -7,6 +7,7 @@ import { API_URL } from '../../config.js';
 // Function component for Sign Up form
 const Sign_Up = () => {
     // State variables using useState hook
+    const [role, setRole] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -25,6 +26,7 @@ const Sign_Up = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
+                role: role,
                 name: name,
                 email: email,
                 password: password,
@@ -37,9 +39,11 @@ const Sign_Up = () => {
         if (json.authtoken) {
             // Store user data in session storage
             sessionStorage.setItem("auth-token", json.authtoken);
+            sessionStorage.setItem("role", role);
             sessionStorage.setItem("name", name);
             sessionStorage.setItem("phone", phone);
             sessionStorage.setItem("email", email);
+            sessionStorage.setItem("password", password);
 
             // Redirect user to home page
             navigate("/");
@@ -63,10 +67,18 @@ const Sign_Up = () => {
                     <h1>Sign Up</h1>
                 </div>
                 <div className="signup-text1"> 
-                    Already a member? <span><Link to="/Login" style={{color: '#2190FF'}}> Login</Link></span>
+                    Already a member? <span><Link to="/Login" style={{color: '#2190FF'}}> <strong>Login</strong></Link></span>
                 </div>
                 <div className="signup-form">
                     <form method="POST" onSubmit={register}>
+                        <div className="form-group">
+                            <label for="role">Role</label>
+                                <select onChange={(e) => setRole(e.target.value)} name="role" id="role" className="form-control" required multiple>
+                                    <option value="select role" disabled>Select Role</option>
+                                    <option value="doctor">Doctor</option>
+                                    <option value="patient">Patient</option>
+                                </select>
+                        </div>
                         <div className="form-group">
                             <label htmlFor="name">Full Name</label>
                             <input value={name} type="text" onChange={(e) => setName(e.target.value)} name="name" id="name" className="form-control" pattern="[a-zA-Z ]{1,15}" title="must only be letters" placeholder="Enter your name" aria-describedby="helpId" />
@@ -86,16 +98,14 @@ const Sign_Up = () => {
                         </div>
 
                         <div className="btn-group"> 
-                            {/* <button className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button> 
-                            <button className="btn btn-danger mb-2 waves-effect waves-light">Reset</button>  */}
-                            <input type="submit" id="submit" value="submit"/>
-                            <input type="reset" id="reset" value="reset" />
+                            <button className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button> 
+                            <button className="btn btn-danger mb-2 waves-effect waves-light">Reset</button>  
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        /* Note: Sign up role is not stored in the database. Additional logic can be implemented for this based on your React code. */
+
     );
 }
 
