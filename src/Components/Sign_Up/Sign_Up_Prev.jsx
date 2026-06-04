@@ -1,0 +1,52 @@
+import React from 'react';
+import './Sign_Up.css';
+
+export function SignUp() {
+    
+
+    return (
+        <>
+            <div class="container" style="margin-top: 5%;"> 
+        <div class="signup-grid"> 
+            <div class="signup-text"> 
+                <h1>Sign Up</h1>
+            </div>
+            <div class="signup-text1" style="text-align: left;"> 
+                Already a member? <span><a href="../Login/Login.html" style="color: #2190FF;"> Login</a></span>
+            </div>
+            <div class="signup-form"> 
+                <form> 
+
+                    <div class="form-group"> 
+                        <label for="name">Name</label> 
+                        <input type="text" name="name" id="name" required class="form-control" pattern="[a-zA-Z\]" title="must only be letters" placeholder="Enter your name" aria-describedby="helpId" /> 
+                    </div>
+
+                    <div class="form-group"> 
+                        <label for="phone">Phone</label> 
+                        <input type="tel" name="phone" id="phone" required class="form-control" pattern=".{10}" title="must be 10 characters digits long" placeholder="Enter your phone number" aria-describedby="helpId" /> 
+                    </div>
+
+                    <div class="form-group"> 
+                        <label for="email">Email</label> 
+                        <input type="email" name="email" id="email" required class="form-control" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="must be valid email format" placeholder="Enter your email" aria-describedby="helpId" /> 
+                    </div>
+
+                    <div class="form-group"> 
+                        <label for="password">Password</label> 
+                        <input name="password" id="password" required class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must be at least 8 chars long and has numbers and letters" placeholder="Enter your password" aria-describedby="helpId" /> 
+                    </div>
+
+                    <div class="btn-group"> 
+                        <button type="submit" class="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button> 
+                        <button type="reset" class="btn btn-danger mb-2 waves-effect waves-light">Reset</button> 
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+        </>
+    )
+}
+
+export default SignUp;
