@@ -1,4 +1,4 @@
-/* Styles for the container element */
+Styles for the container element
 .container {
     max-width: 900px; /* Set maximum width for the container */
     margin: 0 auto; /* Center the container horizontally */
@@ -32,8 +32,8 @@
 
 /* Styles for additional signup text */
 .signup-text1 {
-    grid-column: -1 / 3; /* Span from second to third column from the end */
-    text-align: right; /* Right-align text */
+    grid-column: 2 / span 3; /* Span from second to third column from the end */
+    text-align: center; /* Center-align text */
 }
 
 .signup-text1 span {
@@ -45,6 +45,7 @@
 /* Styles for the signup form section */
 .signup-form {
     grid-column: 2 / 4; /* Span from second to fourth column */
+    justify-self: anchor-center; /*Cust Mod: Anchor to center */
 }
 
 /* Styles for the overall signup container */
@@ -82,7 +83,7 @@
 
 /* Styles for form controls in the signup form */
 .form-control {
-    width: 40%; /* Set width of form controls */
+    width: 100% !important; /* Set width of form controls */
     padding: 8px; /* Add padding inside form controls */
     font-size: 16px; /* Set font size */
     border: 1px solid #ccc; /* Add border with color */
