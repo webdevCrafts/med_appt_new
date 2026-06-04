@@ -4,6 +4,9 @@ import React from 'react';
 // Import components for routing from react-router-dom library
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// Import custom LandingPage component
+import LandingPage from './Components/Landing_Page/Landing_Page';
+
 // Import custom Navbar component
 import Navbar from './Components/Navbar/Navbar';
 
@@ -21,6 +24,8 @@ function App() {
           {/* Set up the Routes for different pages */}
           <Routes>
             {/* Define individual Route components for different pages */}
+
+                <Route path="/" element={<LandingPage/>}/>
           </Routes>
         </BrowserRouter>
     </div>

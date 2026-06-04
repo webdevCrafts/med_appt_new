@@ -69,6 +69,10 @@ nav {
     cursor: pointer;
 }
 
+.nav__logo img {
+    height: 10vh;
+}
+
 /* Styling for a span within the logo */
 .nav__logo span {
     color: #3685fb;

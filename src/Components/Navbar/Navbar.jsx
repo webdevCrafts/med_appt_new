@@ -27,8 +27,8 @@ export function Navbar() {
           
           <a href="/">
             StayHealthy 
-            
-            <svg xmlns="http://www.w3.org/2000/svg" height="26" width="26" viewBox="0 0 1000 1000" style="fill:#3685fb">
+            <img src="https://cdn.pixabay.com/photo/2017/09/30/18/53/prognosis-icon-2803190_1280.png" alt="teal clipboard with heart monitor spike"/>
+            {/* <svg xmlns="http://www.w3.org/2000/svg" height="26" width="26" viewBox="0 0 1000 1000" style="fill:#3685fb">
                 <title>Doctor With Stethoscope SVG icon</title>
                 <g>
                     <g>
@@ -40,7 +40,7 @@ export function Navbar() {
                         <path d="M693.2,395c-0.7,94.9-70.3,173.7-160.8,188.9v155.9c0,80.3-60.7,150.8-140.8,155.3c-83,4.7-152.7-58.9-157.6-139.7c-22-12.8-35.6-38.5-30.3-66.7c4.7-25.1,25.5-45.6,50.8-49.9c39.7-6.7,74.1,23.7,74.1,62.1c0,23-12.3,43-30.7,54.1c4.7,45.4,45.1,80.4,92.6,76c44.6-4,77.2-44...."></path>
                     </g>
                 </g>
-            </svg>
+            </svg> */}
           </a>
           
           <span>.</span>
