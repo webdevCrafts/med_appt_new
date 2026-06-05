@@ -4,7 +4,13 @@ import { useNavigate, Navigate } from 'react-router-dom';
 
 
 const initSpeciality = [
-    'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
+    'Dentist', 
+    'Gynecologist/obstetrician', 
+    'General Physician', 
+    'Dermatologist', 
+    'Ear-nose-throat (ent) Specialist', 
+    'Homeopath', 
+    'Ayurveda'
 ]
 
 const FindDoctorSearchIC = () => {
@@ -15,7 +21,7 @@ const FindDoctorSearchIC = () => {
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
         setDoctorResultHidden(true);
-        navigate(`/instant-consultation?speciality=${speciality}`);
+        navigate(`/InstantConsultation/InstantConsultation?speciality=${speciality}`);
         window.location.reload();
     }
     return (
@@ -27,7 +33,7 @@ const FindDoctorSearchIC = () => {
                     <div className="doctor-search-box">
                     {/* <p>Perform a search to see the results.</p> */}
 
-                        <input type="text" className="search-doctor-input-box" placeholder="Search doctors, clinics, hospitals, etc." onFocus={() => setDoctorResultHidden(false)} onBlur={() => setDoctorResultHidden(true)} value={searchDoctor} onChange={(e) => setSearchDoctor(e.target.value)} />
+                        <input type="text" className="search-doctor-input-box" placeholder="Search doctors, clinics, hospitals, etc." onFocus={() => setDoctorResultHidden(false)} onBlur={() => setDoctorResultHidden(true)} value={searchDoctor} onChange={(e) => setSearchDoctor(e.target.value)} aria-label='search-bar'/>
                         
                         <div className="findiconimg"><img className='findIcon' src={process.env.PUBLIC_URL + '/images/search.svg'} alt=""/></div>
                         <div className="search-doctor-input-results" hidden={doctorResultHidden}>

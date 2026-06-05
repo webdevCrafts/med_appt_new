@@ -19,6 +19,9 @@ import Sign_Up from './Components/Sign_Up/Sign_Up';
 // Import custom Login component
 import Login from './Components/Login/Login';
 
+// Import custom Services component
+import Services from './Components/Services/Services';
+
 // Import custom Instant Consultation component
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation';  
 
@@ -40,11 +43,13 @@ function App() {
 
                 <Route path="/" element={<LandingPage/>}/>
 
-                <Route path="/InstantConsultation/InstantConsultation" element={<InstantConsultation/>}/>
-
                 <Route path="/Sign_Up" element={<Sign_Up/>}/>
 
                 <Route path="/Login" element={<Login/>}/>
+
+                <Route path="/Services" element={<Services/>}/>
+
+                <Route path="/InstantConsultation/InstantConsultation" element={<InstantConsultation/>}/>
 
           </Routes>
         </BrowserRouter>
