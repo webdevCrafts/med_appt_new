@@ -1,20 +1,27 @@
+/* Styles for the main container */
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 900px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 40px; /* Padding inside the container */
+    margin-top: 10%; /* Top margin of 10% */
+}
+
 div.login-grid { 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     justify-content: center;
+    width: 334px;
+}
+
+h2 {
+    text-align: center;
 }
 
 .login-text {
-    width: fit-content;
-}
-
-/* Styles for the main container */
-.container {
-    max-width: 900px; /* Maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 40px; /* Padding inside the container */
-    margin-top: 10%; /* Top margin of 10% */
+    align-self: center;
 }
 
 /* Styles for form groups */
