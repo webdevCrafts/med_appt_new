@@ -28,6 +28,9 @@ import BookingConsultation from './Components/BookingConsultation';
 // Import custom Instant Consultation component
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation';  
 
+// Import custom Appointment Notification component
+import Notification from './Components/Notification/Notification';
+
 // Function component for the main App
 function App() {
 
@@ -37,26 +40,30 @@ function App() {
         {/* Set up BrowserRouter for routing */}
         <BrowserRouter>
 
-          {/* Display the Navbar component */}
+          {/* Display the Navbar component on every page */}
           <Navbar/>
 
-          {/* Set up the Routes for different pages */}
-          <Routes>
-            {/* Define individual Route components for different pages */}
+          {/* Display notification on every page */}
+          <Notification>
 
-                <Route path="/" element={<LandingPage/>}/>
+            {/* Set up the Routes for different pages */}
+            <Routes>
+                {/* Define individual Route components for different pages */}
 
-                <Route path="/Sign_Up" element={<Sign_Up/>}/>
+                    <Route path="/" element={<LandingPage/>}/>
 
-                <Route path="/Login" element={<Login/>}/>
+                    <Route path="/Sign_Up" element={<Sign_Up/>}/>
 
-                <Route path="/Services" element={<Services/>}/>
+                    <Route path="/Login" element={<Login/>}/>
 
-                <Route path="/BookingConsultation" element={<BookingConsultation/>}/>
+                    <Route path="/Services" element={<Services/>}/>
 
-                <Route path="/InstantConsultation/InstantConsultation" element={<InstantConsultation/>}/>
+                    <Route path="/BookingConsultation" element={<BookingConsultation/>}/>
 
-          </Routes>
+                    <Route path="/InstantConsultation/InstantConsultation" element={<InstantConsultation/>}/>
+
+            </Routes>
+         </Notification>
         </BrowserRouter>
     </div>
   );
