@@ -28,9 +28,10 @@ div.service {
 div.service img {
     height: auto;
     width: 75%;
+    aspect-ratio: 1/1;
 }
 
-span {
+div.service span {
     font-weight: 800;
     font-size: 1.3rem;
 }
