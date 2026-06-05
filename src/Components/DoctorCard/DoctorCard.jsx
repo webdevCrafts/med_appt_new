@@ -7,18 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-const DoctorCard = () => {
-
-const doctors = [
-    {
-        name: 'Dr. Henry Burleson',
-        speciality: 'Dentist',
-        experience: '7',
-        ratings: '5',
-        profilePic: 'https://images.unsplash.com/photo-1674775372058-c4c8813c6611?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'male dentist smiling'
-    },
-];
+const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
 
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
@@ -44,27 +33,26 @@ const doctors = [
 
   return (
     <>
-    {doctors.map((doctor, index) => (
-        <div className="doctor-card-container" key={index} doctor={doctor}>
+        <div className="doctor-card-container" >
       <div className="doctor-card-details-container">
         <div className="doctor-card-profile-image-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/> </svg>
-            <img src={doctor.profilePic} alt={doctor.alt}/>
+        {/* <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/> </svg> */}
+        <img src='https://cdn.pixabay.com/photo/2020/07/31/15/33/face-5453349_1280.png' alt="doctor wearing a blue head covering and a white mask"/>
         </div>
         <div className="doctor-card-details">
-          <div className="doctor-card-detail-name">{doctor.name}</div>
-          <div className="doctor-card-detail-speciality">{doctor.speciality}</div>
-          <div className="doctor-card-detail-experience">{doctor.experience} years experience</div>
-          <div className="doctor-card-detail-consultationfees">Ratings: {doctor.ratings}</div>
+          <div className="doctor-card-detail-name">{name}</div>
+          <div className="doctor-card-detail-speciality">{speciality}</div>
+          <div className="doctor-card-detail-experience">{experience} years experience</div>
+          <div className="doctor-card-detail-consultationfees">Ratings: {ratings}</div>
         </div>
         
         {/* Booking Buttons */}
-        <div>
+        {/* <div>
             <button className='book-appointment-btn'>                    
                 <div>Book Appointment</div>
                 <div>No Booking Fee</div>
             </button>
-        </div>
+        </div> */}
       </div>
     
 
@@ -120,7 +108,6 @@ const doctors = [
         </Popup> 
       </div>
         </div>
-    ))}
         
     </>
   );

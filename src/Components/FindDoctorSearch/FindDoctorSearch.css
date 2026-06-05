@@ -1,3 +1,8 @@
+#search-graphic {
+    width: 50%;
+    border-radius: 50em;
+}
+
 .location-search-box {
     display: flex;
     align-items: center;

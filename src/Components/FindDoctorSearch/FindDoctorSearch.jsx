@@ -27,9 +27,11 @@ const FindDoctorSearch = () => {
     return (
         <div className='finddoctor'>
             <center>
-                <h1>Find a doctor and Consult instantly</h1>
-                    <div>               
-                        <i style={{color:'#000000',fontSize:'20rem'}} className="fa fa-user-md"></i>
+                <h1>Find a doctor and Schedule your Appointment</h1>
+                    <div id="search-graphic">     
+                       {/* Original Icon */}
+                        {/* <i style={{color:'#000000',fontSize:'20rem'}} className="fa fa-user-md"></i> */}
+                        <img src='https://cdn.pixabay.com/photo/2026/01/23/08/32/doctor-consultation-illustration-10083993_1280.png' alt="female pateint in medical room with male doctor" />
                     </div>                
                     <div className="home-search-container"  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <div className="doctor-search-box">
