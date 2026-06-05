@@ -1,3 +1,16 @@
+.badge {
+    background-color: #9bbeff;
+    border-radius: 5em;
+    padding: 0.5em;
+    font-weight: 700;
+    color: #194b91;
+}
+
+.badge:not(.members) {
+    background-color: #b2e9e9;
+    color: #008080;
+}
+
 section#services {
     display: flex;
     flex-direction: column;
@@ -42,7 +55,7 @@ div.service img {
     aspect-ratio: 1/1;
 }
 
-div.service span {
+div.service h2 {
     font-weight: 800;
     font-size: 1.3rem;
 }
