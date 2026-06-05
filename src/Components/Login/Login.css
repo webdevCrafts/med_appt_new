@@ -6,6 +6,11 @@
     margin: 0 auto; /* Center the container horizontally */
     padding: 40px; /* Padding inside the container */
     margin-top: 10%; /* Top margin of 10% */
+    border: 2px solid #7190d7;
+    border-radius: 30px;
+    width: 25%;
+    position: relative;
+    top: 15vh;
 }
 
 div.login-grid { 
