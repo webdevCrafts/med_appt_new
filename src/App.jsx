@@ -17,7 +17,7 @@ import Sign_Up from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login';
 
 // Import custom Instant Consultation component
-import InstantConsultation from './components/InstantConsultation/InstantConsultation';  
+import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation';  
 
 // Function component for the main App
 function App() {
@@ -36,6 +36,8 @@ function App() {
             {/* Define individual Route components for different pages */}
 
                 <Route path="/" element={<LandingPage/>}/>
+
+                <Route path="/InstantConsultation/InstantConsultation" element={<InstantConsultation/>}/>
 
                 <Route path="/Sign_Up" element={<Sign_Up/>}/>
 
