@@ -5,15 +5,10 @@ const AppointmentForm= ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedSlot, setSelectedSlot] = useState(null);
-  
-    const handleDateSelection = (date) => {
-      const formattedDate = date.toISOString().slice(0, 10);
-      date.value = formattedDate;
-      setSelectedDate(formattedDate);
-    };
 
     const handleSlotSelection = (slot) => {
-      setSelectedSlot(slot);
+      const timestringHM = slot.toTimeString().split('')[0].slice(0,5);
+      setSelectedSlot(timestringHM);
     };
   
     const handleFormSubmit = (e) => {
@@ -53,7 +48,7 @@ const AppointmentForm= ({ doctorName, doctorSpeciality, onSubmit }) => {
             type="date"
             id="date"
             value={selectedDate}
-            onChange={handleDateSelection}
+            onInput={(e) => setSelectedDate(e.target.value)}
             required
           />
         </div>
@@ -64,6 +59,7 @@ const AppointmentForm= ({ doctorName, doctorSpeciality, onSubmit }) => {
             id="timeSlot"
             value={selectedSlot}
             onChange={handleSlotSelection}
+            onInput={(e) => setSelectedSlot(e.target.value)}
             required
           />
         </div>

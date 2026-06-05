@@ -39,11 +39,17 @@ const FindDoctorSearch = () => {
 
                             <input type="text" className="search-doctor-input-box" placeholder="Search doctors, clinics, hospitals, etc." onFocus={() => setDoctorResultHidden(false)} onBlur={() => setDoctorResultHidden(true)} value={searchDoctor} onChange={(e) => setSearchDoctor(e.target.value)} />
                             
-                            <div className="findiconimg"><img className='findIcon' src={process.env.PUBLIC_URL + '/images/search.svg'} alt=""/></div>
+                            <div className="findiconimg">
+                                {/* <img className='findIcon' src={process.env.PUBLIC_URL + '/images/search.svg'} alt=""/> */}
+                                <img alt="search icon" src="https://cdn.pixabay.com/photo/2017/01/10/23/01/seo-1970475_1280.png"></img>
+                            </div>
                             <div className="search-doctor-input-results" hidden={doctorResultHidden}>
                                 {
                                     specialities.map(speciality => <div className="search-doctor-result-item" key={speciality} onMouseDown={() => handleDoctorSelect(speciality)}>
-                                        <span><img src={process.env.PUBLIC_URL + '/images/search.svg'} alt="" style={{height:"10px", width:"10px"}} width="12" /></span>
+                                        <span>
+                                            {/* <img src={process.env.PUBLIC_URL + '/images/search.svg'} alt="" style={{height:"10px", width:"10px"}} width="12" /> */}
+                                            <img src='https://cdn.pixabay.com/photo/2017/05/15/23/47/stethoscope-icon-2316460_1280.png' alt="stethoscope icon" style={{height:"30px", width:"30px"}} width="12"/>
+                                        </span>
                                         <span>{speciality}</span>
                                         <span>SPECIALITY</span>
                                     </div>)
