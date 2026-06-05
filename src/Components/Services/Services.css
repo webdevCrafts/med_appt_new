@@ -19,10 +19,21 @@ div.service {
     flex-direction: column;
     align-items: center;
     width: fit-content;
-    border: 3px solid #d4d4ff;
+    border: 10px solid #fff;
     padding: 2em;
     border-radius: 2em;
+    gap: 1em;
+    background: aliceblue;
+    box-shadow: 0em 1em 6em 0em #9bbeff;
+    transition: transform 0.3s ease;
+}
 
+div.service:not(.health-tips,.self-checkup):hover {
+    transform: translateX(25%);
+}
+
+div.service:not(.instant-consultation,.book-appointment):hover {
+    transform: translateX(-25%);
 }
 
 div.service img {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// import Popup from 'reactjs-popup';
+import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import './DoctorCard.css';
-// import AppointmentForm from '../AppointmentForm/AppointmentForm'
-// import { v4 as uuidv4 } from 'uuid';
+import AppointmentForm from '../AppointmentForm/AppointmentForm'
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -20,27 +20,27 @@ const doctors = [
     },
 ];
 
-//   const [showModal, setShowModal] = useState(false);
-//   const [appointments, setAppointments] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [appointments, setAppointments] = useState([]);
 
-//   const handleBooking = () => {
-//     setShowModal(true);
-//   };
+  const handleBooking = () => {
+    setShowModal(true);
+  };
 
-//   const handleCancel = (appointmentId) => {
-//     const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
-//     setAppointments(updatedAppointments);
-//   };
+  const handleCancel = (appointmentId) => {
+    const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
+    setAppointments(updatedAppointments);
+  };
 
-//   const handleFormSubmit = (appointmentData) => {
-//     const newAppointment = {
-//       id: uuidv4(),
-//       ...appointmentData,
-//     };
-//     const updatedAppointments = [...appointments, newAppointment];
-//     setAppointments(updatedAppointments);
-//     setShowModal(false);
-//   };
+  const handleFormSubmit = (appointmentData) => {
+    const newAppointment = {
+      id: uuidv4(),
+      ...appointmentData,
+    };
+    const updatedAppointments = [...appointments, newAppointment];
+    setAppointments(updatedAppointments);
+    setShowModal(false);
+  };
 
   return (
     <>
@@ -70,7 +70,7 @@ const doctors = [
 
 
       {/* Only for appointmentform component */}
-      {/* <div className="doctor-card-options-container">
+      <div className="doctor-card-options-container">
        <Popup
           style={{ backgroundColor: '#FFFFFF' }}
           trigger={
@@ -118,7 +118,7 @@ const doctors = [
             </div>
           )}
         </Popup> 
-      </div> */}
+      </div>
         </div>
     ))}
         

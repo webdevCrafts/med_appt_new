@@ -1,3 +1,7 @@
+#search-graphic {
+    width: 25%;
+}
+
 .location-search-box {
     display: flex;
     align-items: center;

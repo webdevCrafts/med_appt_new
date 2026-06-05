@@ -22,6 +22,9 @@ import Login from './Components/Login/Login';
 // Import custom Services component
 import Services from './Components/Services/Services';
 
+// Import Find Doctor Search Bar
+import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
+
 // Import custom Instant Consultation component
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation';  
 
@@ -48,6 +51,8 @@ function App() {
                 <Route path="/Login" element={<Login/>}/>
 
                 <Route path="/Services" element={<Services/>}/>
+
+                <Route path="/FindDoctorSearch" element={<FindDoctorSearch/>}/>
 
                 <Route path="/InstantConsultation/InstantConsultation" element={<InstantConsultation/>}/>
 
