@@ -79,6 +79,7 @@ const Login = () => {
           <div className="login-form">
             <form onSubmit={login}>
               <div className="form-group">
+                <div id="helpId">Input field for user info collection</div>
                 <label htmlFor="email">Email</label>
                 {/* Input field for email */}
                 <input 

@@ -1,6 +1,9 @@
 // Import necessary modules from React library
 import React from 'react';
 
+// Import App stylesheet
+import './App.css';
+
 // Import components for routing from react-router-dom library
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

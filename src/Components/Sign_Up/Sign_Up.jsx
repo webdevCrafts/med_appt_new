@@ -72,8 +72,9 @@ const Sign_Up = () => {
                 <div className="signup-form">
                     <form method="POST" onSubmit={register}>
                         <div className="form-group">
+                            <div id="helpId">Input field for user info collection</div>
                             <label for="role">Role</label>
-                                <select onChange={(e) => setRole(e.target.value)} name="role" id="role" className="form-control" required multiple>
+                                <select onChange={(e) => setRole(e.target.value)} name="role" id="role" className="form-control" aria-describedby="helpId" required multiple>
                                     <option value="select role" disabled>Select Role</option>
                                     <option value="doctor">Doctor</option>
                                     <option value="patient">Patient</option>
