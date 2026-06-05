@@ -16,6 +16,9 @@ import Sign_Up from './Components/Sign_Up/Sign_Up';
 // Import custom Login component
 import Login from './Components/Login/Login';
 
+// Import custom Instant Consultation component
+import InstantConsultation from './components/InstantConsultation/InstantConsultation';  
+
 // Function component for the main App
 function App() {
 
