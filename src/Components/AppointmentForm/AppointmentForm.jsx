@@ -7,10 +7,9 @@ const AppointmentForm= ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [selectedSlot, setSelectedSlot] = useState(null);
   
     const handleDateSelection = (date) => {
-      const date = new Date();
       const formattedDate = date.toISOString().slice(0, 10);
       date.value = formattedDate;
-      setSelectedDate(form);
+      setSelectedDate(formattedDate);
     };
 
     const handleSlotSelection = (slot) => {
