@@ -1,4 +1,7 @@
 div.App {
     background: linear-gradient(45deg, #ecddff 2.34%, #e2f8ff 100.78%);
     height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
 }

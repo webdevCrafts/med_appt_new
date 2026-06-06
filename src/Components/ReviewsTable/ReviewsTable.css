@@ -1,0 +1,21 @@
+section#reviews {
+    position: relative;
+    top: 25vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    padding: 3em;
+    border-radius: 2em;
+    border: 3px solid #194b91;
+}
+
+tr td {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+

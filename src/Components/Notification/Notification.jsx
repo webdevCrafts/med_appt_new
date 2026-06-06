@@ -70,7 +70,7 @@ const Notification = ({ children }) => {
                 <strong>Doctor:</strong> {doctorData?.name}
                 <strong>Patient:</strong> {username}
                 <strong>Appointment Date:</strong> {selectedDate}
-                <strong>Appointment Time:</strong> {selectedSlottedSlot}
+                <strong>Appointment Time:</strong> {selectedSlot}
               </p>
               <div>
                 <button onClick={handleShow}>Show Notification</button>
