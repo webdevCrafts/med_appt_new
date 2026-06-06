@@ -17,6 +17,15 @@ nav {
     background-color: #fff;
 }
 
+p#welcome-message {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(45deg, rgb(33, 144, 255) 2.34%, rgb(182, 115, 248) 100.78%) text;
+}
+
+span#username {
+    font-weight: 900;
+}
+
 /* Styling for the dropdown menu */
 .dropdown-menu {
     position: absolute;

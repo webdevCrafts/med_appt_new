@@ -13,7 +13,9 @@ const Navbar = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const handleClick = () => setClick(!click);
 
-    
+    // Container for username displayed in navbar
+    const user = sessionStorage.getItem("name");
+
     const handleLogout = () => {
         sessionStorage.removeItem("auth-token");
         sessionStorage.removeItem("name");
@@ -70,6 +72,7 @@ const Navbar = () => {
         </li>
         {isLoggedIn?(
           <>
+          <p id="welcome-message">Welcome Back, <span id="username">{user}</span>!</p>
             <li className="link">
               <button className="btn2" onClick={handleLogout}>
                 Logout
