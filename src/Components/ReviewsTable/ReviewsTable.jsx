@@ -25,7 +25,7 @@ function ReviewsTable() {
                 <td>Dr.Jiao Yang</td>
                 <td>Dentist</td>
                 <td>
-                    <Link to="/GiveReviews">
+                    <Link to="/ReviewForm">
                         <button>Click Here</button>
                     </Link>
                 </td>
@@ -38,7 +38,7 @@ function ReviewsTable() {
                 <td>Dr.Jane Smith</td>
                 <td>Dermatology</td>
                 <td>
-                    <Link to="/GiveReviews">
+                    <Link to="/ReviewForm">
                         <button>Click Here</button>
                     </Link>
                 </td>

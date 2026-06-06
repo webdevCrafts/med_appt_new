@@ -7,7 +7,7 @@ const AppointmentForm= ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [selectedSlot, setSelectedSlot] = useState(null);
 
     const handleSlotSelection = (slot) => {
-    selectedSlot(slot)
+      selectedSlot(slot)
     };
   
     const handleFormSubmit = (e) => {

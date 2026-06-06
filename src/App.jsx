@@ -34,6 +34,12 @@ import Notification from './Components/Notification/Notification';
 // Import custom ReviewsTable component
 import ReviewsTable from './Components/ReviewsTable/ReviewsTable';
 
+// Import custom ReviewsForm component
+import GiveReviews from './Components/ReviewForm/ReviewForm';
+
+// Import custom Profile Form component
+import ProfileForm from './Components/ProfileCard/ProfileCard';
+
 // Function component for the main App
 function App() {
 
@@ -66,6 +72,10 @@ function App() {
                     <Route path="/InstantConsultation/InstantConsultation" element={<InstantConsultation/>}/>
 
                     <Route path="/Reviewstable" element={<ReviewsTable/>}/>
+
+                    <Route path="/ReviewForm" element={<GiveReviews/>}/>
+                    
+                    <Route path="/ProfileCard" element={<ProfileForm/>}/>
             </Routes>
          </Notification>
         </BrowserRouter>

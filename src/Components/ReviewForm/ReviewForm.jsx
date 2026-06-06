@@ -42,7 +42,8 @@ function GiveReviews() {
   };
 
   return (
-    <div>
+    <>
+    <div id='review-form'>
       <h2>Form with Message</h2>
       {!showForm ? (
         // Display button to open the form
@@ -73,6 +74,7 @@ function GiveReviews() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

@@ -72,7 +72,15 @@ const Navbar = () => {
         </li>
         {isLoggedIn?(
           <>
-          <p id="welcome-message">Welcome Back, <span id="username">{user}</span>!</p>
+            <li className="welcome-user">
+                Welcome Back, <span id="username">{user}</span>!
+                <ul className="dropdown-menu">
+                    <li>
+                        <Link to="/ProfileCard"><span>Profile</span></Link>
+                    </li>
+                </ul>
+            </li>
+          
             <li className="link">
               <button className="btn2" onClick={handleLogout}>
                 Logout
