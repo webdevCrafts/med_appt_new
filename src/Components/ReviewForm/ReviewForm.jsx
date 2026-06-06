@@ -1,6 +1,7 @@
 // Following code has been commented with appropriate comments for your reference.
 import React, { useState } from 'react';
 
+import 'reactjs-popup/dist/index.css';
 import './ReviewForm.css';
 
 // Function component for giving reviews
@@ -70,18 +71,21 @@ function GiveReviews() {
                 <td>Dr.Jane Smith</td>
                 <td>Dermatology</td>
                 <td>
-                    
-                
-    <div id='review-form'>
-      <h2>Give a Review!</h2>
-      </td>
+                    BUTTON HERE
+                </td>
                 <td>
                    {submittedMessage.review}
                 </td>
             </tr>
         </table>
+    <div id='review-form'>
+      <h2>Give a Review!</h2>
+      <Popup trigger={<button>Click me</button>} position="right center">
+      <div>This is the popup content!</div>
+    </Popup>
       {!showForm ? (
         // Display button to open the form
+        
         <button onClick={handleButtonClick}>Open Form</button>
       ) : (
         // Display form for giving feedback
