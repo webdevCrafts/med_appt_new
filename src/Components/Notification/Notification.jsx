@@ -11,6 +11,7 @@ const Notification = ({ children }) => {
   const [selectedSlot, setSelectedSlot] = useState("");
   const [doctorData, setDoctorData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
+  const [showNotification, setShowNotification] = useState(false);
 
   // useEffect hook to perform side effects in the component
   useEffect(() => {
@@ -21,6 +22,15 @@ const Notification = ({ children }) => {
     // Additional Info to retrieve that I added
     const storedSelectedDate = sessionStorage.getItem('selectedDate');
     const storedSelectedSlot = sessionStorage.getItem('selectedSlot');
+
+
+    const handleShow = () => {
+        setShowNotification(true);
+    }
+
+    const handleHide = () => {
+        setShowNotification(false);
+    }
 
     // Set isLoggedIn state to true and update username if storedUsername exists
     if (storedUsername && storedSelectedDate && storedSelectedSlot) {
@@ -62,6 +72,11 @@ const Notification = ({ children }) => {
                 <strong>Appointment Date:</strong> {selectedDate}
                 <strong>Appointment Time:</strong> {selectedSlottedSlot}
               </p>
+              <div>
+                <button onClick={handleShow}>Show Notification</button>
+                {showNotification && <div className="notification">This is a notification!</div>}
+                {showNotification && <button onClick={handleHide}>Hide Notification</button>}
+              </div>
             </div>
           </div>
         </>
