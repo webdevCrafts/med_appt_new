@@ -1,6 +1,8 @@
 // Following code has been commented with appropriate comments for your reference.
 import React, { useState } from 'react';
 
+import './ReviewForm.css';
+
 // Function component for giving reviews
 function GiveReviews() {
   // State variables using useState hook
@@ -33,6 +35,7 @@ function GiveReviews() {
       review: '',
       rating: 0
     });
+    setShowForm(false);
     // Check if all required fields are filled before submission
     if (formData.name && formData.review && formData.rating > 0) {
       setShowWarning(false);
@@ -43,8 +46,40 @@ function GiveReviews() {
 
   return (
     <>
+    <table>
+            <thead>
+                <th>Serial Number</th>
+                <th>Doctor Name</th>
+                <th>Doctor Specialty</th>
+                <th>Provide Feedback</th>
+                <th>Review Given</th>
+            </thead>
+            <tr>
+                <td>1</td>
+                <td>Dr.Jiao Yang</td>
+                <td>Dentist</td>
+                <td>
+                   
+                </td>
+                <td>
+                    {submittedMessage.review}
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dr.Jane Smith</td>
+                <td>Dermatology</td>
+                <td>
+                    
+                
     <div id='review-form'>
-      <h2>Form with Message</h2>
+      <h2>Give a Review!</h2>
+      </td>
+                <td>
+                   {submittedMessage.review}
+                </td>
+            </tr>
+        </table>
       {!showForm ? (
         // Display button to open the form
         <button onClick={handleButtonClick}>Open Form</button>
@@ -62,6 +97,10 @@ function GiveReviews() {
             <label htmlFor="review">Review:</label>
             <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
           </div>
+          <div>
+            <label htmlFor="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" value={formData.rating} onChange={handleChange} min={1} max={5} />
+          </div>
           {/* Submit button for form submission */}
           <button type="submit">Submit</button>
         </form>
@@ -70,7 +109,9 @@ function GiveReviews() {
       {submittedMessage && (
         <div>
           <h3>Submitted Message:</h3>
-          <p>{submittedMessage}</p>
+          <p>Name: {submittedMessage.name}</p>
+          <p>Review: {submittedMessage.review}</p>
+          <p>Rating: {submittedMessage.rating}</p>
         </div>
       )}
     </div>

@@ -31,9 +31,6 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 // Import custom Appointment Notification component
 import Notification from './Components/Notification/Notification';
 
-// Import custom ReviewsTable component
-import ReviewsTable from './Components/ReviewsTable/ReviewsTable';
-
 // Import custom ReviewsForm component
 import GiveReviews from './Components/ReviewForm/ReviewForm';
 
@@ -70,8 +67,6 @@ function App() {
                     <Route path="/BookingConsultation" element={<BookingConsultation/>}/>
 
                     <Route path="/InstantConsultation/InstantConsultation" element={<InstantConsultation/>}/>
-
-                    <Route path="/Reviewstable" element={<ReviewsTable/>}/>
 
                     <Route path="/ReviewForm" element={<GiveReviews/>}/>
                     
