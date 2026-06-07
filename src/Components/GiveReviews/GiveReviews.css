@@ -1,0 +1,32 @@
+div#review-form {
+    position: absolute;
+    bottom: 15vh;
+    left: 45vw;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+div#review-form button {
+    background-color: #194b91;
+}
+
+div#review-form form {
+    width: 50vw;
+    z-index: 1;
+    background: linear-gradient(45deg, #add8e6 2.34%, #b673f8 100.78%);
+    padding: 3em;
+    border-radius: 3em;
+}
+
+div#review-form form input {
+    width: 100%;
+}
+
+div#sub-message {
+    margin-top: 2em;
+    border: 2px solid #194b91;
+    padding: 1em;
+}
