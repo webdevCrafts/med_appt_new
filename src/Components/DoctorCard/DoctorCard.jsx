@@ -19,6 +19,8 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
   const handleCancel = (appointmentId) => {
     const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
     setAppointments(updatedAppointments);
+    sessionStorage.removeItem('appointmentData');
+    localStorage.removeItem('doctorData');
   };
 
   const handleFormSubmit = (appointmentData) => {
@@ -29,6 +31,9 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     const updatedAppointments = [...appointments, newAppointment];
     setAppointments(updatedAppointments);
     setShowModal(false);
+    // For notification comp to access
+    const formData = {name, speciality, experience, ratings};
+    localStorage.setItem('doctorData', JSON.stringify(formData));
   };
 
   return (

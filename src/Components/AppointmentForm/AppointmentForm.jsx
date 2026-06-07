@@ -3,20 +3,26 @@ import React, { useState } from 'react'
 const AppointmentForm= ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [selectedDate, setSelectedDate] = useState(null);
-    const [selectedSlot, setSelectedSlot] = useState(null);
+    const [date, setDate] = useState(null);
+    const [time, setTime] = useState(null);
 
-    const handleSlotSelection = (slot) => {
-      selectedSlot(slot)
+    const handleDateSelection = (e) => {
+        setDate(e.target.value)
+      };
+
+    const handleTimeSelection = (e) => {
+        setTime(e.target.value)
     };
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber, selectedSlot, selectedDate });
+      const formData = {name, phoneNumber, time, date};
+      sessionStorage.setItem('appointmentData', JSON.stringify(formData));
+      onSubmit(formData);
       setName('');
       setPhoneNumber('');
-      setSelectedDate(null);
-      setPhoneNumber(null);
+      setDate(null);
+      setTime(null);
     };
   
     return (
@@ -46,8 +52,8 @@ const AppointmentForm= ({ doctorName, doctorSpeciality, onSubmit }) => {
           <input
             type="date"
             id="date"
-            value={selectedDate}
-            onInput={(e) => setSelectedDate(e.target.value)}
+            value={date}
+            onChange={handleDateSelection}
             required
           />
         </div>
@@ -56,9 +62,8 @@ const AppointmentForm= ({ doctorName, doctorSpeciality, onSubmit }) => {
           <input
             type="time"
             id="timeSlot"
-            value={selectedSlot}
-            onChange={handleSlotSelection}
-            onInput={(e) => setSelectedSlot(e.target.value)}
+            value={time}
+            onChange={handleTimeSelection}
             required
           />
         </div>
