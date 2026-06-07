@@ -24,11 +24,9 @@ const Notification = ({ children }) => {
     const storedSelectedSlot = sessionStorage.getItem('selectedSlot');
 
 
-    const handleShow = () => {
+    if (storedAppointmentData) {
         setShowNotification(true);
-    }
-
-    const handleHide = () => {
+    } else {
         setShowNotification(false);
     }
 
