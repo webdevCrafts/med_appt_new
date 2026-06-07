@@ -1,4 +1,20 @@
 .appointment-card {
-    position: relative;
-    top: 50vh;
+    position: absolute;
+    left: 73vw;
+    top: 75vh;
+    width: 25vw;
+    background-color: #2190ff;
+    padding: 1em;
+    border-radius: 2em;
+    color: #fff;
+}
+
+.appointment-card button {
+    color: #fff;
+    border: 1px solid currentColor;
+}
+
+p.appointment-card__message {
+    display: flex;
+    flex-direction: column;
 }

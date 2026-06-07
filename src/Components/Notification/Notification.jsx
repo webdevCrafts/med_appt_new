@@ -24,7 +24,6 @@ const Notification = ({ children }) => {
     const storedAppointmentDetails = JSON.parse(sessionStorage.getItem('appointmentData'));
    
 
-
     if (storedAppointmentData && storedAppointmentDetails) {
         setShowNotification(true);
     } else {
@@ -33,8 +32,8 @@ const Notification = ({ children }) => {
 
     // Set isLoggedIn state to true and update username if storedUsername exists
     if (storedUsername) {
-      setIsLoggedIn(true);
-      setUsername(storedUsername);
+        setIsLoggedIn(true);
+        setUsername(storedUsername);
     }
 
     // Set doctorData state if storedDoctorData exists
@@ -54,34 +53,43 @@ const Notification = ({ children }) => {
 
   }, []); // Empty dependency array ensures useEffect runs only once after initial render
 
+  // Handle appointment cancel
+    const handleCancel = () => {
+        sessionStorage.removeItem('appointmentData');
+        localStorage.removeItem('doctorData');
+        setShowNotification(false);
+        const appointmentCard = document.getElementById('appointment');
+        appointmentCard.style.display = 'none';
+    };
+
   // Return JSX elements to display Navbar, children components, and appointment details if user is logged in
   return (
     <div>
-<div className="appointment-card">
-         <div className="appointment-card__content">
-               {/* Display title for appointment details */}
-               <h3 className="appointment-card__title">Appointment Details</h3>
-               <p className="appointment-card__message">
-                 {/* Display doctor's name from doctorData */}
-                 <strong>Doctor:</strong> {doctorData?.name}
-               <strong>Patient:</strong> {username}
-                <strong>Appointment Date:</strong> {appointmentDetails?.date}
-              <strong>Appointment Time:</strong> {appointmentDetails?.time}
-              </p>
-             <div>
-            <button>Show Notification</button>
-                {showNotification && <div className="notification">This is a notification!</div>}
-               {showNotification && <button>Hide Notification</button>}
-            </div>
-          </div>
-         </div>
       Render Navbar component
       <Navbar></Navbar>
       {/* Render children components */}
       {children}
       {/* Display appointment details if user is logged in and appointmentData is available */}
-      {isLoggedIn && appointmentData && (
-        <><h1>HELLO WORLLLLLDDDDDDDDDDDD!</h1></>
+      {isLoggedIn && (
+        <>
+        <div className="appointment-card" id='appointment'>
+         <div className="appointment-card__content">
+               {/* Display title for appointment details */}
+               <h3 className="appointment-card__title">Appointment Details</h3>
+               <p className="appointment-card__message">
+                 {/* Display doctor's name from doctorData */}
+                 <span><strong>Doctor:</strong> {doctorData?.name}</span>
+                 <span><strong>Specialty:</strong> {doctorData?.speciality}</span>
+               <span><strong>Patient:</strong> {username}</span>
+               <span><strong>Phone Number:</strong> {appointmentDetails?.phoneNumber}</span>
+                <span><strong>Appointment Date:</strong> {appointmentDetails?.date}</span>
+              <span><strong>Appointment Time:</strong> {appointmentDetails?.time}</span>
+              </p>
+             <div>
+                <button onClick={handleCancel}>Cancel Appointment</button>
+            </div>
+          </div>
+         </div></>
         // <>
         
         //   <div className="appointment-card">
