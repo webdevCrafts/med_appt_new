@@ -8,22 +8,29 @@ function ReviewForm() {
   // State variables using useState hook
   const [review, setReview] = useState(null);
   const [isDisabled, setIsDisabled] = useState(false);
-
+  
   useEffect(() => {
     const storedReview = JSON.parse(sessionStorage.getItem('review'));
         // If review text exists
         if (storedReview) {
             setReview(storedReview);
         }
+        if (sessionStorage.getItem('btnDisabled') === 'true') {
+            console.log('btn is disbled')
+            setIsDisabled(true);
+        } else {
+            console.log('btn is not disabled')
+        }
   }, []);
   
 
   const handleClick = () => {
-    setIsDisabled(true);
-        window.location.href = '/givereviews';
-        console.log('button is disabled');
-};
+    sessionStorage.setItem('btnDisabled', true);
+    window.location.href = '/givereviews';
+  };
 
+    
+  
 return (
     <>
     {<section id="reviews">
