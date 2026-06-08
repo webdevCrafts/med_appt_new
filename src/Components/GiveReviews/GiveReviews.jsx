@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import './GiveReviews.css';
 
-import ReviewForm from '../ReviewForm/ReviewForm';
+
 // Function component for giving reviews
 function GiveReviews() {
   // State variables using useState hook
@@ -58,6 +58,7 @@ function GiveReviews() {
       ) : (
         // Display form for giving feedback
         <form onSubmit={handleSubmit}>
+            <h1>Give a Review</h1>
           {/* Display warning message if not all fields are filled */}
           {showWarning && <p className="warning">Please fill out all fields.</p>}
           <div>

@@ -12,6 +12,7 @@
 .appointment-card button {
     color: #fff;
     border: 1px solid currentColor;
+    background-color: #194b91;;
 }
 
 p.appointment-card__message {

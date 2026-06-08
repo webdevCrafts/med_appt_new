@@ -1,6 +1,15 @@
 section#reviews {
     position: relative;
     top: 25vh;
+    
+}
+
+section#reviews button {
+    background-color: #194b91;;
+}
+
+section#reviews button[disabled] {
+    background-color: #cecece;
 }
 
 h1 {

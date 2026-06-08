@@ -1,16 +1,32 @@
 // Following code has been commented with appropriate comments for your reference.
 import './ReviewForm.css';
 
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, use } from 'react';
 
 // Function component for giving reviews
-function ReviewForm({submittedMessage}) {
+function ReviewForm() {
   // State variables using useState hook
-    const storedMessage = sessionStorage.getItem('review');
+  const [review, setReview] = useState(null);
+  const [isDisabled, setIsDisabled] = useState(false);
 
-  return (
+  useEffect(() => {
+    const storedReview = JSON.parse(sessionStorage.getItem('review'));
+        // If review text exists
+        if (storedReview) {
+            setReview(storedReview);
+        }
+  }, []);
+  
+
+  const handleClick = () => {
+    setIsDisabled(true);
+        window.location.href = '/givereviews';
+        console.log('button is disabled');
+};
+
+return (
     <>
-    <section id="reviews">
+    {<section id="reviews">
         <h1>Reviews</h1>
     <table>
             <thead>
@@ -25,12 +41,12 @@ function ReviewForm({submittedMessage}) {
                 <td>Dr.Jiao Yang</td>
                 <td>Dentist</td>
                 <td>
-                   <Link to="/GiveReviews">
-                        <button>Give Review</button>
-                   </Link>
+                        <button className='reviewBtn' onClick={handleClick} disabled={isDisabled}>Give Review</button>
                 </td>
-                <td>
-                    {submittedMessage}
+                <td class='review'>
+                    {review?.review}
+                    <br/>
+                    {review?.rating} &#11088;
                 </td>
             </tr>
             <tr>
@@ -38,16 +54,16 @@ function ReviewForm({submittedMessage}) {
                 <td>Dr.Jane Smith</td>
                 <td>Dermatology</td>
                 <td>
-                   <Link to="/GiveReviews">
-                        <button>Give Review</button>
-                   </Link>
+                        <button className='reviewBtn' onClick={handleClick} disabled={isDisabled}>Give Review</button>
                 </td>
-                <td>
-                   {submittedMessage}
+                <td class='review'>
+                   {review?.review}
+                   <br/>
+                   {review?.rating} &#11088;
                 </td>
             </tr>
         </table>
-    </section>
+    </section>}
     </>
   );
 }
